@@ -106,7 +106,7 @@ const PinDetail = ({ user }) => {
             </div>
             <div className="flex mt-7 gap-2 items-center">
               <a
-                href={`readbook/${pinDetail.file.asset.url.slice(46)}`}
+                href={`readbook/${pinDetail.file.asset.url.slice(46, -5)}`}
                 className="bg-blue-500 rounded-lg pl-3 pr-3 pt-2 pb-2 text-xl flex items-center justify-center text-white opacity-100 hover:opacity-100"
               >
                 <AiOutlineRead /> Read

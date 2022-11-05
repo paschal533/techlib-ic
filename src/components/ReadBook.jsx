@@ -147,7 +147,7 @@ class ReadBook extends Component {
         </Bar>
         <ReaderContainer fullscreen={fullscreen}>
           <ReactReader
-            url={`https://cdn.sanity.io/files/nmn06h0c/production${this.url.pathname.slice(22)}`}
+            url={`https://cdn.sanity.io/files/nmn06h0c/production${this.url.pathname.slice(22)}.epub`}
             title="book"
             location={location}
             locationChanged={this.onLocationChanged}
