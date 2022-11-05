@@ -28,6 +28,7 @@ const Login = () => {
   const responseGoogle = (response) => {
     try {
       const { name, googleId, imageUrl } = response.profileObj;
+      console.log(response);
       const doc = {
         _id: googleId,
         _type: 'user',
@@ -59,7 +60,7 @@ const Login = () => {
 
           <div className="shadow-2xl">
             <GoogleLogin
-              clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
+              clientId="700582890406-5npt2va0v4krlaaghb425579s2fel0qc.apps.googleusercontent.com"
               render={(renderProps) => (
                 <button
                   type="button"
