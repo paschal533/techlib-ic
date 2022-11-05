@@ -26,17 +26,22 @@ const Login = () => {
   };
 
   const responseGoogle = (response) => {
-    const { name, googleId, imageUrl } = response.profileObj;
-    const doc = {
-      _id: googleId,
-      _type: 'user',
-      userName: name,
-      image: imageUrl,
-    };
-    localStorage.setItem('user', JSON.stringify(doc));
-    client.createIfNotExists(doc).then(() => {
-      navigate('/', { replace: true });
-    });
+    try {
+      const { name, googleId, imageUrl } = response.profileObj;
+      console.log(name);
+      const doc = {
+        _id: googleId,
+        _type: 'user',
+        userName: name,
+        image: imageUrl,
+      };
+      localStorage.setItem('user', JSON.stringify(doc));
+      client.createIfNotExists(doc).then(() => {
+        navigate('/', { replace: true });
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
