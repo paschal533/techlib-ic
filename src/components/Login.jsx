@@ -28,7 +28,6 @@ const Login = () => {
   const responseGoogle = (response) => {
     try {
       const { name, googleId, imageUrl } = response.profileObj;
-      console.log(response);
       const doc = {
         _id: googleId,
         _type: 'user',
