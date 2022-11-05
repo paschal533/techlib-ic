@@ -27,9 +27,8 @@ const Login = () => {
 
   const responseGoogle = (response) => {
     try {
-      // const { name, googleId, imageUrl } = response.profileObj;
-      console.log(response);
-      /* const doc = {
+      const { name, googleId, imageUrl } = response.profileObj;
+      const doc = {
         _id: googleId,
         _type: 'user',
         userName: name,
@@ -38,7 +37,7 @@ const Login = () => {
       localStorage.setItem('user', JSON.stringify(doc));
       client.createIfNotExists(doc).then(() => {
         navigate('/', { replace: true });
-      }); */
+      });
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +59,7 @@ const Login = () => {
 
           <div className="shadow-2xl">
             <GoogleLogin
-              clientId="700582890406-5npt2va0v4krlaaghb425579s2fel0qc.apps.googleusercontent.com"
+              clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
               render={(renderProps) => (
                 <button
                   type="button"
